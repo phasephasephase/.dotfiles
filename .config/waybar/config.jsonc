@@ -19,7 +19,7 @@
     ],
     "modules-right": [
         "mpd",
-        "pulseaudio",
+        "wireplumber",
         "cpu",
         "memory",
         "clock",
