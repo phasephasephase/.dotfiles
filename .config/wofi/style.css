@@ -5,14 +5,12 @@ window {
 	font-family: CaskaydiaCoveNerdFont, monospace;
 	background-color: @color2;
 	color: @foreground;
-	border: 2px solid @foreground;
 }
 
 #entry:selected {
 	background-color: @color1;
-	border-right: 2px solid @foreground;
-	border-left: 2px solid @foreground;
-	border-top: none;
+	border: none;
+    border-radius: 10px;
 }
 
 #text:selected {
@@ -21,12 +19,9 @@ window {
 
 #input {
 	background-color: @background;
-	border-top: 2px solid @foreground;
-	border-right: 2px solid @foreground;
-	border-left: 2px solid @foreground;
-	border-bottom: none;
-	border-radius: 0;
+	border-radius: 10px;
 	box-shadow: none;
+    border: none;
 	color: @foreground;
 }
 

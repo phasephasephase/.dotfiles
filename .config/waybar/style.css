@@ -4,13 +4,17 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, CaskaydiaCoveNerdFont, monospace;
     font-size: 13px;
+    background: transparent;
 }
 
 window#waybar {
     background-color: transparent;
     color: @foreground;
-    transition-property: background-color;
-    transition-duration: .2s;
+}
+
+window#waybar > box {
+    background-color: @background;
+    border-radius: 10px;
 }
 
 window#waybar.hidden {
@@ -32,21 +36,19 @@ window#waybar.termite {
 
 window#waybar.chromium {
     background-color: #000000;
-    border: none;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+    box-shadow: none;
+    border: 5px solid @background;
+    border-radius: 13px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    text-shadow: inherit;
 }
 
 #workspaces button {
@@ -56,7 +58,7 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.14);
 }
 
 #workspaces button.focused {
@@ -69,7 +71,6 @@ button:hover {
 
 #mode {
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 #clock,
@@ -82,20 +83,22 @@ button:hover {
 #network,
 #pulseaudio,
 #wireplumber,
-#custom-media,
+#custom-spotify,
 #tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 9px;
     color: @foreground;
+    border: 5px solid @background;
+    border-radius: 13px;
 }
 
 #window,
 #workspaces {
-    margin: 0 4px;
+    margin: 0;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -204,18 +207,13 @@ label:focus {
     background-color: @background;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
+#custom-spotify {
+    background-color: @background;
 }
 
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+#custom-power {
+    margin-left: 5px;
+    margin-right: 15px;
 }
 
 #temperature {
@@ -227,7 +225,7 @@ label:focus {
 }
 
 #tray {
-    background-color: @color7;
+    background-color: transparent;
 }
 
 #tray > .passive {
