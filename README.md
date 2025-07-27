@@ -15,6 +15,7 @@ my system config
 `swaybg`
 `waybar`
 `albert`
+`kitty`
 `pywal16`
 `ohmyzsh`
 `grim`
