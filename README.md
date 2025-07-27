@@ -4,11 +4,11 @@ my system config
 ![image](https://github.com/user-attachments/assets/39c238fb-e638-4eb3-a31d-235c41c111a6)
 
 # specs
-- Arch Linux, default kernel
+- Arch Linux, zen kernel
 - 2 monitors - main 16:10, second 16:9
-- Intel Core i7-3770
+- Intel Core i5-7500
 - Radeon RX 6400
-- 20 GB memory
+- 32 GB memory
 
 # tools used
 `swayfx`
@@ -17,7 +17,9 @@ my system config
 `wofi`
 `pywal16`
 `ohmyzsh`
-`flameshot`
+`grim`
+`slurp`
+`swappy`
 `smile`
 `playerctl`
 
