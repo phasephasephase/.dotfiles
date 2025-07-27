@@ -212,7 +212,7 @@
     "custom/spotify": {
         "format": "{}",
         "return-type": "json",
-        "max-length": 40,
+        "max-length": 50,
         "escape": true,
         "on-click": "playerctl -p spotify play-pause",
         "on-scroll-up" : "playerctl -p spotify next",
