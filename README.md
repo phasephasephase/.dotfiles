@@ -14,7 +14,7 @@ my system config
 `swayfx`
 `swaybg`
 `waybar`
-`wofi`
+`albert`
 `pywal16`
 `ohmyzsh`
 `grim`
