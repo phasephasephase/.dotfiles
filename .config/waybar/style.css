@@ -6,16 +6,19 @@
     font-size: 13px;
     font-weight: 500;
     background: transparent;
+    transition-property: all;
+    transition-duration: 0.2s;
 }
 
 window#waybar {
-    background-color: transparent;
+    background: transparent;
     color: @foreground;
 }
 
 window#waybar > box {
-    background-color: @background;
     border-radius: 10px;
+    background-color: alpha(@background, 0.2);
+    border: 1px solid alpha(black, 0.2);
 }
 
 window#waybar.hidden {
@@ -42,8 +45,8 @@ window#waybar.chromium {
 button {
     /* Avoid rounded borders under each button name */
     box-shadow: none;
-    border: 5px solid @background;
-    border-radius: 13px;
+    border: none;
+    border-radius: 10px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -53,17 +56,18 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 3px 8px;
+    margin-right: 7px;
     background-color: transparent;
     color: @foreground;
 }
 
 #workspaces button:hover {
-    background-color: rgba(0, 0, 0, 0.14);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #workspaces button.focused {
-    background-color: @color1;
+    background-color: alpha(@color1, 0.4);
 }
 
 #workspaces button.urgent {
@@ -91,10 +95,10 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 9px;
+    padding: 0 13px;
     color: @foreground;
-    border: 5px solid @background;
-    border-radius: 13px;
+    border-radius: 10px;
+    margin-left: 7px;
 }
 
 #window,
@@ -113,7 +117,7 @@ button:hover {
 }
 
 #clock {
-    background-color: @color6;
+    background-color: alpha(@color6, 0.4);
 }
 
 #battery {
@@ -168,11 +172,11 @@ label:focus {
 }
 
 #cpu {
-    background-color: @color4;
+    background-color: alpha(@color4, 0.4);
 }
 
 #memory {
-    background-color: @color5;
+    background-color: alpha(@color5, 0.4);
 }
 
 #disk {
@@ -201,15 +205,15 @@ label:focus {
 }
 
 #wireplumber {
-    background-color: @color3;
+    background-color: alpha(@color3, 0.4);
 }
 
 #wireplumber.muted {
-    background-color: @background;
+    background-color: alpha(@background, 0.4);
 }
 
 #custom-spotify {
-    background-color: @background;
+    background-color: transparent;
 }
 
 #custom-power {
