@@ -1,7 +1,7 @@
 # .dotfiles
 my system config
 
-![image](https://github.com/user-attachments/assets/39c238fb-e638-4eb3-a31d-235c41c111a6)
+<img width="1920" height="1080" alt="swappy-20250802_180106" src="https://github.com/user-attachments/assets/11d52a45-e3e6-4fa5-a4fe-332791ee8154" />
 
 # specs
 - Arch Linux, zen kernel
