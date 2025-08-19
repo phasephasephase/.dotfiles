@@ -35,8 +35,10 @@ dim_inactive_colors.unfocused #000000FF
 exec_always "cd /home/phase && ./set_primary.sh"
 exec "cd /home/phase && ./slideshow.sh"
 
+exec autotiling-rs
 exec albert
 exec swaync
+exec swayosd-server
 exec syncthing
 exec keepassxc
 exec wl-paste -t text --watch clipman store --no-persist
@@ -209,9 +211,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Media
-bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%+
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --output-volume 2
+bindsym XF86AudioLowerVolume exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --output-volume -2
+bindsym XF86AudioMute exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --output-volume mute-toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -238,6 +240,7 @@ bar {
 }
 
 layer_effects "waybar" blur enable; blur_xray enable; blur_ignore_transparent enable; shadows enable; corner_radius 10
+layer_effects "swayosd" blur enable; blur_ignore_transparent enable; shadows enable; corner_radius 10
 layer_effects "wofi" shadows enable; corner_radius 10
 
 include /etc/sway/config.d/*
