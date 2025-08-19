@@ -23,6 +23,7 @@ my system config
 `swappy`
 `smile`
 `playerctl`
+`swayosd`
 
 # more info
 all folders and files are in my home directory and i'm too lazy to make a script to automate the install... so like ... Do it yourself
